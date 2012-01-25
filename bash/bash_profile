@@ -20,3 +20,16 @@ source "$HOME/.dots/bash/conf/bash_completion"
 if [ -e "$HOME/.bash_profile.local" ]; then
   source "$HOME/.bash_profile.local"
 fi
+
+##
+# Your previous /Users/tnunes/.bash_profile file was backed up as /Users/tnunes/.bash_profile.macports-saved_2011-12-14_at_18:37:30
+##
+
+# MacPorts Installer addition on 2011-12-14_at_18:37:30: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+# MacPorts Bash shell command completion
+if [ -f /opt/local/etc/bash_completion ]; then
+    . /opt/local/etc/bash_completion
+fi
