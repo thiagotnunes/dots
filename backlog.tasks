@@ -1,6 +1,0 @@
-General:
-  ✓ setup functions
-  ✓ setup local configs for bash
-  - bash completion should test if brew is installed before executing
-  - setup a README file
-  - setup a Rake task to install

@@ -1,14 +1,11 @@
 # make ls colorful
-alias ls='ls -G'
+alias ls='ls --color=auto'
 alias ll='ls -alF'
-alias la='ls -A'
 alias l='ls -CF'
 # make grep colorful
 alias grep='grep --color=auto -i'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-# set localhost alias
-alias here="localhost"
 # set move and copy to be verbose
 alias mv="mv -v"
 alias cp="cp -v"
@@ -19,3 +16,7 @@ case `uname -s` in
 esac
 alias v="vim"
 alias g="git"
+
+alias gr="cd $HOME/workspaces/ruby/rails"
+alias gg="cd $HOME/workspaces/gap/gid"
+alias gs="cd $HOME/workspaces/ruby/sinatra"

@@ -32,5 +32,5 @@ c() { cat $(fn "$1"); }
 
 ldown() { 
   DOWNLOADS=$HOME/Downloads
-  echo $(ls -t $DOWNLOADS | head -1)
+  echo $DOWNLOADS/$(ls -t $DOWNLOADS | head -1)
 }
