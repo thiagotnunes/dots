@@ -33,3 +33,12 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
 fi
+
+##
+# Your previous /Users/tnunes/.bash_profile file was backed up as /Users/tnunes/.bash_profile.macports-saved_2012-01-25_at_21:50:50
+##
+
+# MacPorts Installer addition on 2012-01-25_at_21:50:50: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
