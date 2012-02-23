@@ -37,3 +37,11 @@ c() { cat $(fn "$1"); }
 ldown() { 
   echo $DOWNLOADS/$(ls -t $DOWNLOADS | head -1)
 }
+
+mdown() {
+  mv "`ldown`" $1
+}
+
+cdown() {
+  cp "`ldown`" $1
+}
