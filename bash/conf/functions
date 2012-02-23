@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DOWNLOADS=$HOME/Downloads
+
 myfind() {
   FFOUND_PWD=${PWD}
   FFOUND=($(find . -iname "*$2*" -type "$1"))
@@ -33,6 +35,5 @@ d() { cd $(dirname $(fn "$1")); }
 c() { cat $(fn "$1"); }
 
 ldown() { 
-  DOWNLOADS=$HOME/Downloads
   echo $DOWNLOADS/$(ls -t $DOWNLOADS | head -1)
 }
