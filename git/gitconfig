@@ -38,6 +38,7 @@
 
 [alias]
   aa = add --all
+  amend = commit --amend
   l = log
   lg = log --graph --pretty=format:'%C(yellow)%h %Cblue%aN %Cgreen%ar %Creset%s'
   ls = log --stat
@@ -56,3 +57,5 @@
   p = push
   r = remote
   unstage = reset HEAD --
+[merge]
+  tool = vimdiff
