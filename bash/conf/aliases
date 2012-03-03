@@ -1,5 +1,5 @@
 # make ls colorful
-alias ls='ls -G'
+alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias l='ls -CF'
 # make grep colorful
