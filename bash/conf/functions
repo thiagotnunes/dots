@@ -58,3 +58,16 @@ v() {
     vim $@
   fi
 }
+
+resolve_ecom() {
+    gg;
+    cd build/buildeng;
+    sed 's/<env key="VERSIONER_PERL_VERSION" value="5.8.9"\/>//' <dependency.xml > dependency-tmp.xml; 
+    mv dependency-tmp.xml dependency.xml;
+    br;
+    rake components;
+    rake ecom;
+    gg;
+    cd build/buildeng;
+    git checkout dependency.xml;
+} 

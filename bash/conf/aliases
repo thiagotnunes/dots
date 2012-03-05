@@ -18,4 +18,6 @@ alias g="git"
 
 alias gr="cd $HOME/workspaces/ruby/rails"
 alias gg="cd $HOME/workspaces/gap/gid"
+alias br="cd $HOME/workspaces/gap/brazil-build"
 alias gs="cd $HOME/workspaces/ruby/sinatra"
+alias gj="cd $HOME/workspaces/javascript"
