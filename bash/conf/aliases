@@ -16,8 +16,11 @@ case `uname -s` in
 esac
 alias g="git"
 
-alias gr="cd $HOME/workspaces/ruby/rails"
-alias gg="cd $HOME/workspaces/gap/gid"
-alias br="cd $HOME/workspaces/gap/brazil-build"
-alias gs="cd $HOME/workspaces/ruby/sinatra"
-alias gj="cd $HOME/workspaces/javascript"
+WORKSPACE="$HOME/workspaces"
+alias ww="cd $WORKSPACE"
+alias gr="cd $WORKSPACE/ruby/rails"
+alias gg="cd $WORKSPACE/gap/gid"
+alias br="cd $WORKSPACE/gap/brazil-build"
+alias gs="cd $WORKSPACE/ruby/sinatra"
+alias gj="cd $WORKSPACE/javascript"
+alias gci="cd $WORKSPACE/ruby/ci"
