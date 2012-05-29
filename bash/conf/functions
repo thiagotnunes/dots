@@ -19,7 +19,7 @@ resolve_ecom() {
     cd build/buildeng;
     sed 's/<env key="VERSIONER_PERL_VERSION" value="5.8.9"\/>//' <dependency.xml > dependency-tmp.xml; 
     mv dependency-tmp.xml dependency.xml;
-    br;
+    gb;
     rake components;
     rake ecom;
     gg;

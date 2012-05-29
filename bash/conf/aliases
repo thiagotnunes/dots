@@ -10,17 +10,16 @@ alias egrep='egrep --color=auto'
 alias mv="mv -v"
 alias cp="cp -v"
 alias vi="vim"
-case `uname -s` in
- 'Linux') if type -p gvim &>/dev/null; then alias vim="gvim"; fi ;;
- 'Darwin') if type -p mvim &>/dev/null; then alias vim="mvim"; fi ;;
-esac
 alias g="git"
+alias r="rails"
+alias b="bundle"
 
 WORKSPACE="$HOME/workspaces"
-alias ww="cd $WORKSPACE"
+alias gw="cd $WORKSPACE"
 alias gr="cd $WORKSPACE/ruby/rails"
-alias gg="cd $WORKSPACE/gap/gid"
-alias br="cd $WORKSPACE/gap/brazil-build"
 alias gs="cd $WORKSPACE/ruby/sinatra"
 alias gj="cd $WORKSPACE/javascript"
 alias gci="cd $WORKSPACE/ruby/ci"
+
+alias gg="cd $WORKSPACE/gap/gid"
+alias gb="cd $WORKSPACE/gap/brazil-build"
