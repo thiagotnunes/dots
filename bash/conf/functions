@@ -2,18 +2,22 @@
 
 DOWNLOADS=$HOME/Downloads
 
+# Lists the last downloaded file
 ldown() { 
   echo $DOWNLOADS/$(ls -t $DOWNLOADS | head -1)
 }
 
+# Moves the last downloaded file
 mdown() {
   mv "`ldown`" $1
 }
 
+# Copies the last downloaded file
 cdown() {
   cp "`ldown`" $1
 }
 
+# Resolves the ecom dependencies
 resolve_ecom() {
     gg;
     cd build/buildeng;
@@ -26,3 +30,20 @@ resolve_ecom() {
     cd build/buildeng;
     git checkout dependency.xml;
 } 
+
+# Sets and changes to the work directory
+cw() {
+  if [ $# -gt 0 ]; then
+    export CW="$(PWD)/$1"
+    echo "Current working directory set to $CW"
+  fi
+
+  if [ "$CW" != "" ]; then
+    cd $CW
+  fi 
+}
+
+# Prints out the current working directory
+cw?() {
+  echo "$CW"
+}
