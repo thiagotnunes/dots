@@ -3,5 +3,6 @@
 *.swp
 *.swo
 .netrwhist
+# Ignore the tags file, but not a tags folder if it exists
 tags
 !tags/
