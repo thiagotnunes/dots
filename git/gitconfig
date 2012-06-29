@@ -38,7 +38,7 @@
 
 [alias]
   aa = add --all
-  amend = commit --amend
+  am = commit --amend
   l = log
   lg = log --graph --pretty=format:'%C(yellow)%h %Cblue%aN %Cgreen%ar %Creset%s'
   ls = log --stat
@@ -60,3 +60,5 @@
   deploy = push heroku master
 [merge]
   tool = vimdiff
+[http]
+	proxy = http://qaproxy.gid.gap.com:8080
