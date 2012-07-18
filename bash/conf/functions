@@ -24,6 +24,7 @@ resolve_ecom() {
     sed 's/<env key="VERSIONER_PERL_VERSION" value="5.8.9"\/>//' <dependency.xml > dependency-tmp.xml; 
     mv dependency-tmp.xml dependency.xml;
     gb;
+    rake solr;
     rake components;
     rake ecom;
     gg;
