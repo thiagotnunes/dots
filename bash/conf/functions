@@ -35,16 +35,30 @@ resolve_ecom() {
 # Sets and changes to the work directory
 cw() {
   if [ $# -gt 0 ]; then
-    export CW="$(PWD)/$1"
-    echo "Current working directory set to $CW"
+    set_cw $1
   fi
 
-  if [ "$CW" != "" ]; then
-    cd $CW
+  if [ "$CW" == "" ]; then
+    load_cw
   fi 
+
+  cd $CW
+}
+
+# Loads the current working directory from the configuration file
+load_cw() {
+  source ~/.cw
+}
+
+# Sets the current working directory
+set_cw() {
+    CW="$(PWD)/$1"
+    echo "export CW=$CW" > ~/.cw
+    echo "Current working directory set to $CW"
 }
 
 # Prints out the current working directory
 cw?() {
+  load_cw
   echo "$CW"
 }
