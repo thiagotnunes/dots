@@ -13,6 +13,9 @@ source "$HOME/.dots/bash/conf/general"
 #source rvm configuration
 source "$HOME/.dots/bash/conf/rvm"
 
+#source client configuration
+source "$HOME/.dots/bash/conf/client"
+
 #source bash_completion configuration
 source "$HOME/.dots/bash/conf/bash_completion"
 

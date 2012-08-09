@@ -17,21 +17,6 @@ cdown() {
   cp "`ldown`" $1
 }
 
-# Resolves the ecom dependencies
-resolve_ecom() {
-    gg;
-    cd build/buildeng;
-    sed 's/<env key="VERSIONER_PERL_VERSION" value="5.8.9"\/>//' <dependency.xml > dependency-tmp.xml; 
-    mv dependency-tmp.xml dependency.xml;
-    gb;
-    rake solr;
-    rake components;
-    rake ecom;
-    gg;
-    cd build/buildeng;
-    git checkout dependency.xml;
-} 
-
 # Sets and changes to the work directory
 cw() {
   if [ $# -gt 0 ]; then

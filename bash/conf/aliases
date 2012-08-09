@@ -19,6 +19,3 @@ alias gr="cd $WORKSPACE/ruby/rails"
 alias gs="cd $WORKSPACE/ruby/sinatra"
 alias gj="cd $WORKSPACE/javascript"
 alias gci="cd $WORKSPACE/ruby/ci"
-
-alias gg="cd $WORKSPACE/gap/gid"
-alias gb="cd $WORKSPACE/gap/brazil-build"

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+alias gg="cd $WORKSPACE/gap/gid"
+alias gb="cd $WORKSPACE/gap/brazil-build"
+
+# Resolves the ecom dependencies
+resolve_ecom() {
+    gg;
+    cd build/buildeng;
+    sed 's/<env key="VERSIONER_PERL_VERSION" value="5.8.9"\/>//' <dependency.xml > dependency-tmp.xml; 
+    mv dependency-tmp.xml dependency.xml;
+    gb;
+    rake solr;
+    rake components;
+    rake ecom;
+    gg;
+    cd build/buildeng;
+    git checkout dependency.xml;
+} 
+
