@@ -38,9 +38,8 @@
 
 [alias]
   aa = add --all
-  am = commit --amend
+  amend = commit --amend
   lg = log --graph --pretty=format:'%C(yellow)%h %Cblue%aN %Cgreen%ar %Creset%s'
-  ls = log --stat
   s = show
   d = diff
   ds = diff --staged
@@ -52,5 +51,3 @@
   unstage = reset HEAD --
 [merge]
   tool = vimdiff
-[http]
-	proxy = http://qaproxy.gid.gap.com:8080
