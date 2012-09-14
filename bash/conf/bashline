@@ -1,10 +1,23 @@
-# set up the terminal format
-USER_AND_HOST_='\[\e[0;34m\]' ;
-PATH_='\[\e[;32m\]' ;
-GIT_='\[\e[;31m\]' ;
+# Colors
+GREY_='\[\e[0;30m\]' ;
+RED_='\[\e[;31m\]' ;
+GREEN_='\[\e[;32m\]' ;
+BLUE_='\[\e[0;34m\]' ;
+WHITE_='\[\e[0;37m\]' ;
+
+# Fields
+USER_="$BLUE_\u" ;
+
+HOST_="$BLUE_\h" ;
+
+PATH_="$GREEN_\W" ;
+
 GIT_REPO_='$(__git_ps1 "(%s) ")' ;
-SEPARATOR_='\[\e[;31m\]' ;
-SYMBOL='∴' ;
-PROMPT_='\[\e[;37m\]'
+GIT_="$RED_$GIT_REPO_"
+
+SYMBOL="${RED_}∴" ;
+
 END_='\[\e[m\]' ;
-export PS1="$USER_AND_HOST_\u@\h $PATH_\W $GIT_$GIT_REPO_$SEPARATOR_$SYMBOL $PROMPT_$END_"
+PROMPT_="$WHITE_$END_" ;
+
+export PS1="$USER_@$HOST_ $PATH_ $GIT_$SYMBOL $PROMPT_$END_"
