@@ -51,3 +51,5 @@
   unstage = reset HEAD --
 [merge]
   tool = vimdiff
+[credential]
+	helper = osxkeychain
