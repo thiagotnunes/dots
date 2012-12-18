@@ -25,3 +25,5 @@ if [ -e "$HOME/.bash_profile.local" ]; then
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
