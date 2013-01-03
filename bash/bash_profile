@@ -10,20 +10,18 @@ source "$HOME/.dots/bash/conf/functions"
 #source general configuration
 source "$HOME/.dots/bash/conf/general"
 
-#source rvm configuration
-source "$HOME/.dots/bash/conf/rvm"
-
 #source client configuration
 source "$HOME/.dots/bash/conf/client"
 
 #source bash_completion configuration
 source "$HOME/.dots/bash/conf/bash_completion"
 
+#source rbenv configuration
+source "$HOME/.dots/bash/conf/rbenv"
+
 #source bash_profile.local if it exists
 if [ -e "$HOME/.bash_profile.local" ]; then
   source "$HOME/.bash_profile.local"
 fi
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
