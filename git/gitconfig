@@ -50,6 +50,7 @@
   co = checkout
   p = push
   unstage = reset HEAD --
+  pr = pull --rebase
 [merge]
   tool = vimdiff
 [credential]
