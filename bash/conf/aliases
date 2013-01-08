@@ -22,6 +22,8 @@ alias gjsn="cd $WORKSPACE/javascript/node"
 alias gr="cd $WORKSPACE/ruby"
 alias grr="cd $WORKSPACE/ruby/rails"
 alias grs="cd $WORKSPACE/ruby/sinatra"
+alias gdots="cd ~/.dots"
+alias gvim="cd ~/.vim"
 
 # Prints out the most used commands
 alias habits='\history 500 | sed "s/^[[:space:]]*[0-9]*[[:space:]]*//" | sort | uniq -c | sort -n -r | head -n 10'
