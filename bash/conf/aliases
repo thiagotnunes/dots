@@ -2,6 +2,9 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
+# make it simpler
+alias ..='cd ..'
+
 # set move and copy to be verbose
 alias mv="mv -v"
 alias cp="cp -v"
