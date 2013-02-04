@@ -1,0 +1,7 @@
+CLOJURE_HOME="$HOME/workspaces/clojure/lib"
+
+CLASSPATH="$CLOJURE_HOME/clojure-contrib-1.1.0/clojure-contrib.jar:$CLASSPATH"
+CLASSPATH="$CLOJURE_HOME/jline-1.0/jline-1.0.jar:$CLASSPATH"
+CLASSPATH="$CLOJURE_HOME/clojure-1.4.0/clojure-1.4.0.jar:$CLASSPATH"
+
+export CLASSPATH
