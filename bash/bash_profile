@@ -1,5 +1,4 @@
 source "$HOME/.dots/bash/conf/path"
-source "$HOME/.dots/bash/conf/classpath"
 source "$HOME/.dots/bash/conf/aliases"
 source "$HOME/.dots/bash/conf/functions"
 source "$HOME/.dots/bash/conf/general"
