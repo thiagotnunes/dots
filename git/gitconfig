@@ -1,5 +1,5 @@
 [user]
-  name = Thiago Nunes 
+  name = Thiago Nunes
   email = thiagotnunes@gmail.com
 
 [color]
@@ -18,10 +18,10 @@
   remote = cyan
 
 [color "diff"]
-  meta = yellow 
-  frag = cyan 
+  meta = yellow
+  frag = cyan
   old = red
-  new = green 
+  new = green
 
 [color "status"]
   added = green
@@ -49,8 +49,8 @@
   ci = commit
   co = checkout
   p = push
+  plr = pull --rebase
   unstage = reset HEAD --
-  pr = pull --rebase
 [merge]
   tool = vimdiff
 [credential]
