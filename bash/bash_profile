@@ -2,7 +2,6 @@ source "$HOME/.dots/bash/conf/path"
 source "$HOME/.dots/bash/conf/aliases"
 source "$HOME/.dots/bash/conf/functions"
 source "$HOME/.dots/bash/conf/general"
-source "$HOME/.dots/bash/conf/client"
 source "$HOME/.dots/bash/conf/bash_completion"
 source "$HOME/.dots/bash/conf/rbenv"
 
