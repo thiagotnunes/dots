@@ -40,8 +40,6 @@
   aa = add --all
   amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
   alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t=> \\2/' | sort
-  lg = log --graph --pretty=format:'%C(yellow)%h %Cblue%aN %Cgreen%ar %Creset%s'
-  s = show
   d = diff
   ds = diff --staged
   st = status
@@ -51,6 +49,9 @@
   p = push
   plr = pull --rebase
   unstage = reset HEAD --
+  assume= !f() { git ls-files "$@" | xargs -n 100 git update-index --assume-unchanged\n}\n f;
+  unassume= !f() { git ls-files "$@" | xargs -n 100 git update-index --no-assume-unchanged\n}\n f
+  assumed = !git ls-files -v | grep "^[[:lower:]]"
 [merge]
   tool = vimdiff
 [credential]

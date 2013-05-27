@@ -47,3 +47,9 @@ cw?() {
   load_cw
   echo "$CW"
 }
+
+# Calls dash documentation
+doc ()
+{
+  open dash://$1
+}

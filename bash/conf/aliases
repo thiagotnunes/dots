@@ -28,6 +28,13 @@ alias grr="cd $WORKSPACE/ruby/rails"
 alias grs="cd $WORKSPACE/ruby/sinatra"
 alias gdots="cd ~/.dots"
 alias gvim="cd ~/.vim"
+alias gblog="cd $WORKSPACE/blogging/octopress"
 
 # Prints out the most used commands
 alias habits='\history 500 | sed "s/^[[:space:]]*[0-9]*[[:space:]]*//" | sort | uniq -c | sort -n -r | head -n 10'
+
+# Starts postgres
+alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+
+# Stops postgres
+alias pg_stop='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
