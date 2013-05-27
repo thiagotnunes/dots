@@ -3,7 +3,7 @@
 DOWNLOADS=$HOME/Downloads
 
 # Lists the last downloaded file
-ldown() { 
+ldown() {
   echo $DOWNLOADS/$(ls -t $DOWNLOADS | head -1)
 }
 
@@ -25,7 +25,7 @@ cw() {
 
   if [ "$CW" == "" ]; then
     load_cw
-  fi 
+  fi
 
   cd $CW
 }
@@ -46,10 +46,4 @@ set_cw() {
 cw?() {
   load_cw
   echo "$CW"
-}
-
-# Calls dash documentation
-doc ()
-{
-  open dash://$1
 }
