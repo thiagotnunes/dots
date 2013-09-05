@@ -1,0 +1,6 @@
+" vim: syntax=vim
+
+" Highlights extra whitespaces at the end of the lines
+:highlight ExtraWhitespace guifg=red guibg=red
+:match ExtraWhitespace /\s\+$\| \+\ze\t/
+:autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red

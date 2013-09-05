@@ -1,0 +1,12 @@
+" vim: syntax=vim
+
+let g:Powerline_symbols = 'fancy'
+
+" Exclude non text files from vim search
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class
+
+" Rainbow parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces

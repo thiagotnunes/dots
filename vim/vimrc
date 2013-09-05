@@ -1,0 +1,20 @@
+" source general configurations
+source $HOME/.vim/conf/initial
+
+" source highlighting options
+source $HOME/.vim/conf/highlight
+
+" source vundle
+source $HOME/.vim/conf/vundle
+
+" source plugins
+source $HOME/.vim/conf/plugins
+
+" source custom functions
+source $HOME/.vim/conf/functions
+
+" source shortcut mappings
+source $HOME/.vim/conf/shortcuts
+
+" source interface options
+source $HOME/.vim/conf/guioptions

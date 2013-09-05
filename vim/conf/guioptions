@@ -1,0 +1,23 @@
+" vim: filetype=vim
+
+" Sets the colorscheme
+colorscheme wombat256mod
+
+" set the space from the current line when scrolling
+set scrolloff=3
+
+" set the colors when using terminal commands
+set noguipty
+
+" command-line completion shows a list of matches
+set wmnu
+
+" set a better font for mac os
+set guifont=Menlo\ For\ Powerline
+let g:Powerline_symbols = 'fancy'
+
+" sets numbers
+set nu
+
+" load the status line
+source ~/.vim/conf/statusline

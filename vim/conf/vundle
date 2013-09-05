@@ -1,0 +1,52 @@
+" vim: syntax=vim
+
+" required!
+filetype off
+
+set rtp+=~/.vim/autoload/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" Enhancing editing/typing related
+Bundle "vim-scripts/matchit.zip"
+Bundle "tpope/vim-surround"
+Bundle "ervandew/supertab"
+
+" Comments related
+Bundle "ddollar/nerdcommenter"
+
+" Parenthesis
+Bundle "kien/rainbow_parentheses.vim"
+
+" Ruby related
+Bundle "slim-template/vim-slim"
+Bundle "vim-ruby/vim-ruby"
+Bundle "tpope/vim-rails"
+
+" File/buffer navigation related
+Bundle "scrooloose/nerdtree"
+Bundle "kien/ctrlp.vim"
+
+" Vim interface related
+Bundle "vim-scripts/ZoomWin"
+Bundle "Lokaltog/vim-powerline"
+
+" Viewers related
+Bundle "sjl/gundo.vim"
+Bundle "mileszs/ack.vim"
+
+" Colorscheme related
+Bundle "vim-scripts/wombat256.vim"
+
+" Git related
+Bundle "airblade/vim-gitgutter"
+Bundle 'tpope/vim-fugitive'
+
+" Elixir
+Bundle "elixir-lang/vim-elixir"
+
+" required!
+filetype plugin indent on

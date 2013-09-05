@@ -1,0 +1,49 @@
+" vim: syntax=vim
+
+" Sets options for vim instead of vi
+set nocompatible
+
+" Sets vi encoding to utf 8
+set encoding=utf-8
+
+" Always show the status line
+set laststatus=2
+
+" Search highlighting and incremental
+set incsearch
+set hlsearch
+
+" Set change word to append a dollar at the end of the selection
+set cpoptions+=$
+
+" Shows cmd that is currently being typed
+set showcmd
+
+" Auto indentation for programming =)
+set ai
+
+" Do not create a backup file
+set nobackup
+
+" Syntax highlighting
+if &t_Co > 1
+  syntax on
+endif
+
+" Indentation
+filetype plugin indent on
+set smartindent
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Sets the vim clipboard to be shared with the OS
+set clipboard=unnamed
+
+" Removes weird coloring in TMUX
+set t_ut=
+
+" fix slight delay after pressing ESC then O
+" http://ksjoberg.com/vim-esckeys.html
+" set noesckeys
+set timeout timeoutlen=1000 ttimeoutlen=100
