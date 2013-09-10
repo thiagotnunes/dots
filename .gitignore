@@ -1,1 +1,3 @@
 vim/bundle
+emacs/
+!emacs/init.el
