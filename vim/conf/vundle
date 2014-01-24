@@ -48,5 +48,8 @@ Bundle 'tpope/vim-fugitive'
 " Elixir
 Bundle "elixir-lang/vim-elixir"
 
+" Go
+Bundle "jnwhiteh/vim-golang"
+
 " required!
 filetype plugin indent on

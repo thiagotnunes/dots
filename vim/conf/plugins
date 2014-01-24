@@ -10,3 +10,7 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+" Go
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+autocmd FileType go compiler go
