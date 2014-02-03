@@ -10,7 +10,6 @@
                       auto-complete
                       clojure-mode
                       clojure-test-mode
-                      elisp-slime-nav
                       elixir-mix
                       elixir-mode
                       less-css-mode
@@ -32,20 +31,15 @@
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 (remove-hook 'coding-hook 'turn-on-hl-line-mode)
 
+;; Don't use messages that you don't read
+(setq initial-scratch-message "")
+(setq inhibit-startup-message t)
+;; ;; Don't let Emacs hurt your ears
+(setq visible-bell t)
+
 ;; rainbow delimiters
 (global-rainbow-delimiters-mode)
-
-;; Setting up clojure
-(add-hook 'clojure-mode-hook 'paredit-mode)
-
-(require 'clojure-mode)
-(define-clojure-indent
-    (provided 1)
-    (context 1)
-    (facts 1)
-    (lie 1)
-    (future-fact 1)
-    (fact 1))
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;; Setting up nrepl
 (add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)
@@ -72,10 +66,34 @@
 ;;(global-set-key [up] 'windmove-up)
 ;;(global-set-key [down] 'windmove-down)
 
-;; Requires clojure snippets
-(when (require 'yasnippet nil 'noerror)
-  (progn
-    (yas/load-directory "~/.emacs.d/snippets")))
-
 ;; Mustache Mode
 (require 'mustache-mode)
+
+;; Move line up / down
+(defun move-line-up ()
+  "Move up the current line."
+  (interactive)
+  (transpose-lines 1)
+  (forward-line -2)
+  (indent-according-to-mode))
+
+(defun move-line-down ()
+  "Move down the current line."
+  (interactive)
+  (forward-line 1)
+  (transpose-lines 1)
+  (forward-line -1)
+  (indent-according-to-mode))
+
+(global-set-key [(meta shift up)]  'move-line-up)
+(global-set-key [(meta shift down)]  'move-line-down)
+
+;; Clojure workflow
+ (defun nrepl-reset ()
+   (interactive)
+   (set-buffer "*nrepl*")
+   (goto-char (point-max))
+   (insert "(reset)")
+   (nrepl-return))
+
+(global-set-key (kbd "C-c C-o") 'nrepl-reset)
