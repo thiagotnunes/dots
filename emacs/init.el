@@ -6,21 +6,17 @@
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
 
-(defvar my-packages '(ac-nrepl
-                      auto-complete
+(defvar my-packages '(auto-complete
                       clojure-mode
-                      clojure-test-mode
                       elixir-mix
                       elixir-mode
                       less-css-mode
                       magit
                       mustache-mode
-                      nrepl
                       paredit
                       popup
                       rainbow-delimiters
-                      starter-kit
-                      starter-kit-lisp))
+                      starter-kit))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
@@ -41,24 +37,24 @@
 (global-rainbow-delimiters-mode)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
-;; Setting up nrepl
-(add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)
-(add-hook 'nrepl-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'nrepl-mode-hook 'paredit-mode)
-(add-hook 'nrepl-mode-hook 'subword-mode)
-(add-hook 'clojure-mode-hook 'turn-on-eldoc-mode)
-(setq nrepl-hide-special-buffers t)
-(setq nrepl-popup-stacktraces nil)
-(add-to-list 'same-window-buffer-names "*nrepl*")
+;; clojure mode
+(require 'clojure-mode)
+(add-hook 'clojure-mode-hook 'paredit-mode)
+(define-clojure-indent
+  (provided 1)
+  (context 1)
+  (facts 1)
+  (lie 1)
+  (future-fact 1)
+  (fact 1))
 
-(require 'auto-complete-config)
-(ac-config-default)
-(define-key ac-completing-map "\M-/" 'ac-stop) ; use M-/ to stop completion
-(require 'ac-nrepl)
-(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
-(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
-(eval-after-load "auto-complete" '(add-to-list 'ac-modes 'nrepl-mode))
-(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
+;; Setting up cider
+(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+(setq nrepl-hide-special-buffers t)
+(setq cider-popup-stacktraces nil)
+(add-hook 'cider-repl-mode-hook 'subword-mode)
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
+(add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 
 ;; Maps arrows keys to window movement
 ;;(global-set-key [right] 'windmove-right)
@@ -91,9 +87,6 @@
 ;; Clojure workflow
  (defun nrepl-reset ()
    (interactive)
-   (set-buffer "*nrepl*")
-   (goto-char (point-max))
-   (insert "(reset)")
-   (nrepl-return))
+   (cider-interactive-eval "(user/reset)"))
 
 (global-set-key (kbd "C-c C-o") 'nrepl-reset)
