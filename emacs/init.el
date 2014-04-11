@@ -1,81 +1,92 @@
-(push "~/.emacs.d" load-path)
-
 (require 'package)
+
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
 
-(defvar my-packages '(auto-complete
-                      cider
-                      clojure-mode
+(defvar my-packages '(cider
                       clj-refactor
-                      dash
+                      clojure-mode
                       flx-ido
-                      magit
+                      ido
+                      ido-ubiquitous
                       multiple-cursors
                       paredit
-                      popup
-                      projectile
                       rainbow-delimiters
-                      starter-kit))
+                      smex))
 
 (dolist (p my-packages)
-  (when (not (package-installed-p p))
+  (unless (package-installed-p p)
     (package-install p)))
 
+; Theme
 (load-theme 'wombat)
 
-(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
-(remove-hook 'coding-hook 'turn-on-hl-line-mode)
-
-;; Don't use messages that you don't read
+; Initial messages
 (setq initial-scratch-message "")
 (setq inhibit-startup-message t)
-;; ;; Don't let Emacs hurt your ears
-(setq visible-bell t)
 
-;; rainbow delimiters
-(global-rainbow-delimiters-mode)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+; Interface
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
-;; clojure mode
-(require 'clojure-mode)
-(add-hook 'clojure-mode-hook 'paredit-mode)
-
-;; Setting up cider
+; Configure cider
+(require 'cider)
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (setq nrepl-hide-special-buffers t)
 (setq cider-popup-stacktraces nil)
+(setq cider-repl-popup-stacktraces t)
+(setq cider-repl-wrap-history t)
 (add-hook 'cider-repl-mode-hook 'subword-mode)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 
-;; Maps arrows keys to window movement
-;;(global-set-key [right] 'windmove-right)
-;;(global-set-key [left] 'windmove-left)
-;;(global-set-key [up] 'windmove-up)
-;;(global-set-key [down] 'windmove-down)
-
-;; Clojure workflow
- (defun nrepl-reset ()
-   (interactive)
-   (cider-interactive-eval "(user/reset)"))
-
-(global-set-key (kbd "C-c C-o") 'nrepl-reset)
-
-;; Projectile
-(projectile-global-mode)
-
-;; Multiple cursors
-(require 'multiple-cursors)
-
-(global-set-key (kbd "C-c f") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c b") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
-
-;; Clojure refactor
+; Configure clj-refactor
 (require 'clj-refactor)
 (add-hook 'clojure-mode-hook (lambda ()
                                (clj-refactor-mode 1)
-                               (cljr-add-keybindings-with-prefix "C-c C-m")))
+                               (cljr-add-keybindings-with-prefix "C-c C-m")
+                               ))
+(yas/global-mode 1)
+
+; Configure ido
+(require 'ido)
+(require 'flx-ido)
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+;; disable ido faces to see flx highlights.
+(setq ido-use-faces nil)
+
+; Configure multiple cursors
+(require 'multiple-cursors)
+(global-set-key (kbd "C-c n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c s") 'mc/skip-to-next-like-this)
+(global-set-key (kbd "C-c p") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c w") 'mc/mark-all-words-like-this)
+(global-set-key (kbd "C-c i") 'mc/edit-lines)
+
+; Configure paredit
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+(add-hook 'clojure-mode-hook          #'enable-paredit-mode)
+
+; Configure rainbow delimiters
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+; Configure SMEX
+(require 'smex)
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
