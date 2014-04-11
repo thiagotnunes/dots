@@ -4,6 +4,18 @@ alias grep='grep --color=auto'
 
 # make it simpler
 alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../..'
+
+# path
+alias path='echo -e ${PATH//:/\\n}'
+
+# sudo
+alias root='sudo -i'
+
+# top
+alias cpu='top -o cpu'
+alias mem='top -o rsize' # memory
 
 # set move and copy to be verbose
 alias mv="mv -v"
