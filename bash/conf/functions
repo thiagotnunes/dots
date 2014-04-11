@@ -50,5 +50,5 @@ cw?() {
 
 # Loads the current environment into emacs
 eemacs() {
-  eval $(cat .env.test) emacs
+  eval "$(cat .env.test | tr '\n' ' ')" emacs
 }
