@@ -5,13 +5,16 @@
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
 
-(defvar my-packages '(cider
+(defvar my-packages '(ag
+                      cider
                       clj-refactor
                       clojure-mode
                       flx-ido
                       ido
                       ido-ubiquitous
                       multiple-cursors
+                      powerline
+                      projectile
                       paredit
                       rainbow-delimiters
                       smex))
@@ -27,10 +30,28 @@
 (setq initial-scratch-message "")
 (setq inhibit-startup-message t)
 
+; Quit message
+(fset 'yes-or-no-p 'y-or-n-p)
+
+; Set standard indent to 2 rather that 4
+(setq standard-indent 2)
+
+; Turn off tab char
+(setq-default indent-tabs-mode nil)
+
 ; Interface
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+
+; Remove trailing whitespace before saving
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+; Show trailing whitespace
+(setq-default show-trailing-whitespace t)
+
+; Configure ag
+(require 'ag)
+(setq ag-highlight-search t)
 
 ; Configure cider
 (require 'cider)
@@ -78,6 +99,13 @@
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 (add-hook 'clojure-mode-hook          #'enable-paredit-mode)
+
+; Configure powerline
+(require 'powerline)
+(powerline-default-theme)
+
+; Configure projectile
+(projectile-global-mode)
 
 ; Configure rainbow delimiters
 (require 'rainbow-delimiters)
