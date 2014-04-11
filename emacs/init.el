@@ -7,14 +7,16 @@
 (package-initialize)
 
 (defvar my-packages '(auto-complete
+                      cider
                       clojure-mode
-                      elixir-mix
-                      elixir-mode
-                      less-css-mode
+                      clj-refactor
+                      dash
+                      flx-ido
                       magit
-                      mustache-mode
+                      multiple-cursors
                       paredit
                       popup
+                      projectile
                       rainbow-delimiters
                       starter-kit))
 
@@ -40,13 +42,6 @@
 ;; clojure mode
 (require 'clojure-mode)
 (add-hook 'clojure-mode-hook 'paredit-mode)
-(define-clojure-indent
-  (provided 1)
-  (context 1)
-  (facts 1)
-  (lie 1)
-  (future-fact 1)
-  (fact 1))
 
 ;; Setting up cider
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
@@ -62,31 +57,25 @@
 ;;(global-set-key [up] 'windmove-up)
 ;;(global-set-key [down] 'windmove-down)
 
-;; Mustache Mode
-(require 'mustache-mode)
-
-;; Move line up / down
-(defun move-line-up ()
-  "Move up the current line."
-  (interactive)
-  (transpose-lines 1)
-  (forward-line -2)
-  (indent-according-to-mode))
-
-(defun move-line-down ()
-  "Move down the current line."
-  (interactive)
-  (forward-line 1)
-  (transpose-lines 1)
-  (forward-line -1)
-  (indent-according-to-mode))
-
-(global-set-key [(meta shift up)]  'move-line-up)
-(global-set-key [(meta shift down)]  'move-line-down)
-
 ;; Clojure workflow
  (defun nrepl-reset ()
    (interactive)
    (cider-interactive-eval "(user/reset)"))
 
 (global-set-key (kbd "C-c C-o") 'nrepl-reset)
+
+;; Projectile
+(projectile-global-mode)
+
+;; Multiple cursors
+(require 'multiple-cursors)
+
+(global-set-key (kbd "C-c f") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c b") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
+
+;; Clojure refactor
+(require 'clj-refactor)
+(add-hook 'clojure-mode-hook (lambda ()
+                               (clj-refactor-mode 1)
+                               (cljr-add-keybindings-with-prefix "C-c C-m")))
