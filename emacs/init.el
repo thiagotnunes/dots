@@ -5,10 +5,12 @@
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
 
-(defvar my-packages '(ag
+(defvar my-packages '(ace-jump-mode
+                      ag
                       cider
                       clj-refactor
                       clojure-mode
+                      expand-region
                       flx-ido
                       ido
                       ido-ubiquitous
@@ -35,6 +37,7 @@
 
 ; Set standard indent to 2 rather that 4
 (setq standard-indent 2)
+(define-key global-map (kbd "RET") 'newline-and-indent)
 
 ; Turn off tab char
 (setq-default indent-tabs-mode nil)
@@ -48,6 +51,14 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 ; Show trailing whitespace
 (setq-default show-trailing-whitespace t)
+
+; Selection delete and update
+(pending-delete-mode t)
+(delete-selection-mode t)
+
+; Configure ace-jump-mode
+(require 'ace-jump-mode)
+(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 
 ; Configure ag
 (require 'ag)
@@ -71,6 +82,10 @@
                                (cljr-add-keybindings-with-prefix "C-c C-m")
                                ))
 (yas/global-mode 1)
+
+; Configure expand-region
+(require 'expand-region)
+(global-set-key (kbd "C-c =") 'er/expand-region)
 
 ; Configure ido
 (require 'ido)
