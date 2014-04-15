@@ -15,7 +15,6 @@
                       ido
                       ido-ubiquitous
                       multiple-cursors
-                      powerline
                       projectile
                       paredit
                       rainbow-delimiters
@@ -71,6 +70,7 @@
 (setq cider-popup-stacktraces nil)
 (setq cider-repl-popup-stacktraces t)
 (setq cider-repl-wrap-history t)
+(setq cider-auto-select-error-buffer nil)
 (add-hook 'cider-repl-mode-hook 'subword-mode)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
@@ -114,10 +114,6 @@
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 (add-hook 'clojure-mode-hook          #'enable-paredit-mode)
-
-; Configure powerline
-(require 'powerline)
-(powerline-default-theme)
 
 ; Configure projectile
 (projectile-global-mode)
