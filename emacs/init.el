@@ -7,6 +7,7 @@
 
 (defvar my-packages '(ace-jump-mode
                       ag
+                      anzu
                       cider
                       clj-refactor
                       clojure-mode
@@ -34,12 +35,12 @@
 ; Quit message
 (fset 'yes-or-no-p 'y-or-n-p)
 
+; Turn off tab char
+(setq-default indent-tabs-mode nil)
+
 ; Set standard indent to 2 rather that 4
 (setq standard-indent 2)
 (define-key global-map (kbd "RET") 'newline-and-indent)
-
-; Turn off tab char
-(setq-default indent-tabs-mode nil)
 
 ; Interface
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -55,6 +56,37 @@
 (pending-delete-mode t)
 (delete-selection-mode t)
 
+; No backup files
+(setq make-backup-files nil)
+
+; Move lines up and down
+(defun move-line-up ()
+  (interactive)
+  (transpose-lines 1)
+  (forward-line -2))
+
+(defun move-line-down ()
+  (interactive)
+  (forward-line 1)
+  (transpose-lines 1)
+  (forward-line -1))
+
+(global-set-key (kbd "M-p") 'move-line-up)
+(global-set-key (kbd "M-n") 'move-line-down)
+
+; Show matching parenthesis
+(show-paren-mode t)
+
+; Remap undo / redo
+(global-set-key (kbd "C-z") 'undo)
+(global-set-key (kbd "C-Z") 'redo)
+
+; No more arrow keys
+;(global-set-key [left] 'windmove-left)
+;(global-set-key [right] 'windmove-right)
+;(global-set-key [up] 'windmove-up)
+;(global-set-key [down] 'windmove-down)
+
 ; Configure ace-jump-mode
 (require 'ace-jump-mode)
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
@@ -63,12 +95,15 @@
 (require 'ag)
 (setq ag-highlight-search t)
 
+; Configure anzu
+(global-anzu-mode +1)
+
 ; Configure cider
 (require 'cider)
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (setq nrepl-hide-special-buffers t)
 (setq cider-popup-stacktraces nil)
-(setq cider-repl-popup-stacktraces t)
+(setq cider-repl-popup-stacktraces nil)
 (setq cider-repl-wrap-history t)
 (setq cider-auto-select-error-buffer nil)
 (add-hook 'cider-repl-mode-hook 'subword-mode)
@@ -81,6 +116,8 @@
                                (clj-refactor-mode 1)
                                (cljr-add-keybindings-with-prefix "C-c C-m")
                                ))
+
+; Configure yas snippets
 (yas/global-mode 1)
 
 ; Configure expand-region
