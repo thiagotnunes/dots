@@ -47,8 +47,3 @@ cw?() {
   load_cw
   echo "$CW"
 }
-
-# Loads the current environment into emacs
-eemacs() {
-  eval "$(cat .env.test | tr '\n' ' ')" emacs
-}

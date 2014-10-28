@@ -20,4 +20,4 @@ SYMBOL="${RED_}∴" ;
 END_='\[\e[m\]' ;
 PROMPT_="$WHITE_$END_" ;
 
-export PS1="$USER_@$HOST_ $PATH_ $GIT_$SYMBOL $PROMPT_$END_"
+export PS1="$PATH_ $GIT_$SYMBOL $PROMPT_$END_"

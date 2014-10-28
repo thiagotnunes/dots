@@ -11,6 +11,7 @@
                       cider
                       clj-refactor
                       clojure-mode
+                      clojure-snippets
                       expand-region
                       flx-ido
                       ido
@@ -19,7 +20,8 @@
                       projectile
                       paredit
                       rainbow-delimiters
-                      smex))
+                      smex
+                      yasnippet))
 
 (dolist (p my-packages)
   (unless (package-installed-p p)
@@ -41,6 +43,9 @@
 ; Set standard indent to 2 rather that 4
 (setq standard-indent 2)
 (define-key global-map (kbd "RET") 'newline-and-indent)
+
+; Sets newline in the end of the file
+(setq-default require-final-newline t)
 
 ; Interface
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -166,3 +171,6 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+; Adds custom load env file
+(load "~/.emacs.d/load-env.el")
