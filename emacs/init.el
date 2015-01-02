@@ -14,6 +14,7 @@
                       clojure-snippets
                       expand-region
                       flx-ido
+                      haskell-mode
                       ido
                       ido-ubiquitous
                       multiple-cursors
@@ -128,6 +129,13 @@
 ; Configure expand-region
 (require 'expand-region)
 (global-set-key (kbd "C-c =") 'er/expand-region)
+
+; Configure haskell-mode
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(eval-after-load "haskell-mode"
+                 '(define-key haskell-mode-map (kbd "C-c C-c") 'haskell-compile))
+(eval-after-load "haskell-cabal"
+                 '(define-key haskell-cabal-mode-map (kbd "C-c C-c") 'haskell-compile))
 
 ; Configure ido
 (require 'ido)
