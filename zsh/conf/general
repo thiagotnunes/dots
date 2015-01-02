@@ -1,0 +1,14 @@
+# Emacs keybindings
+bindkey -e
+
+# Autocd when cannot find command
+setopt autocd
+
+# Tries to extend globs
+setopt extendedglob
+
+# Errors when does not match files
+setopt nomatch
+
+# Does not beep
+unsetopt beep

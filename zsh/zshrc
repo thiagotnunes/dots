@@ -1,0 +1,17 @@
+source "$HOME/.dots/zsh/conf/path"
+source "$HOME/.dots/zsh/conf/aliases"
+source "$HOME/.dots/zsh/conf/functions"
+source "$HOME/.dots/zsh/conf/history"
+source "$HOME/.dots/zsh/conf/general"
+source "$HOME/.dots/zsh/conf/plugins"
+source "$HOME/.dots/zsh/conf/ps1"
+
+zstyle :compinstall filename '$HOME/.zshrc'
+
+autoload -Uz compinit
+compinit
+
+#source bash_profile.local if it exists
+if [ -e "$HOME/.bash_profile.local" ]; then
+  source "$HOME/.bash_profile.local"
+fi

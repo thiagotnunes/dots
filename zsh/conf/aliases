@@ -1,0 +1,51 @@
+# make it colorful
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+# make it simpler
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../..'
+
+# path
+alias path='echo -e ${PATH//:/\\n}'
+
+# sudo
+alias root='sudo -i'
+
+# top
+alias cpu='top -o cpu'
+alias mem='top -o rsize' # memory
+
+# set move and copy to be verbose
+alias mv="mv -v"
+alias cp="cp -v"
+
+# Aliases the binaries to shorter names
+alias vi="vim"
+alias g="git"
+alias r="rails"
+alias b="bundle"
+alias be="bundle exec"
+
+# Quickly go into the directories
+WORKSPACE="$HOME/workspaces"
+alias gw="cd $WORKSPACE"
+alias gj="cd $WORKSPACE/java"
+alias gjs="cd $WORKSPACE/javascript"
+alias gc="cd $WORKSPACE/clojure"
+alias gr="cd $WORKSPACE/ruby"
+alias grr="cd $WORKSPACE/ruby/rails"
+alias grs="cd $WORKSPACE/ruby/sinatra"
+alias gdots="cd ~/.dots"
+alias gvim="cd ~/.vim"
+alias gblog="cd $WORKSPACE/blogging/octopress"
+
+# Prints out the most used commands
+alias habits='\history 500 | sed "s/^[[:space:]]*[0-9]*[[:space:]]*//" | sort | uniq -c | sort -n -r | head -n 10'
+
+# Starts postgres
+alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+
+# Stops postgres
+alias pg_stop='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
