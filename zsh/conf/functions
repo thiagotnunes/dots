@@ -47,3 +47,8 @@ get_cw() {
   load_cw
   echo "$CW"
 }
+
+# Cds and ls
+cd() {
+  builtin cd "$@"; ls;
+}
