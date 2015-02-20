@@ -1,55 +1,57 @@
 " vim: syntax=vim
 
-" required!
-filetype off
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-set rtp+=~/.vim/autoload/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/autoload/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " Enhancing editing/typing related
-Bundle "vim-scripts/matchit.zip"
-Bundle "tpope/vim-surround"
-Bundle "ervandew/supertab"
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'tpope/vim-surround'
+Plugin 'ervandew/supertab'
 
 " Comments related
-Bundle "ddollar/nerdcommenter"
+Plugin 'ddollar/nerdcommenter'
 
 " Parenthesis
-Bundle "kien/rainbow_parentheses.vim"
+Plugin 'kien/rainbow_parentheses.vim'
 
 " Ruby related
-Bundle "slim-template/vim-slim"
-Bundle "vim-ruby/vim-ruby"
-Bundle "tpope/vim-rails"
+Plugin 'slim-template/vim-slim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
 
 " File/buffer navigation related
-Bundle "scrooloose/nerdtree"
-Bundle "kien/ctrlp.vim"
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
 
 " Vim interface related
-Bundle "vim-scripts/ZoomWin"
-Bundle "Lokaltog/vim-powerline"
+Plugin 'vim-scripts/ZoomWin'
+Plugin 'Lokaltog/vim-powerline'
 
 " Viewers related
-Bundle "sjl/gundo.vim"
-Bundle "mileszs/ack.vim"
+Plugin 'sjl/gundo.vim'
+Plugin 'mileszs/ack.vim'
 
 " Colorscheme related
-Bundle "vim-scripts/wombat256.vim"
+Plugin 'vim-scripts/wombat256.vim'
 
 " Git related
-Bundle "airblade/vim-gitgutter"
-Bundle 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 
 " Elixir
-Bundle "elixir-lang/vim-elixir"
+Plugin 'elixir-lang/vim-elixir'
 
 " Go
-Bundle "jnwhiteh/vim-golang"
+Plugin 'jnwhiteh/vim-golang'
 
-" required!
-filetype plugin indent on
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
