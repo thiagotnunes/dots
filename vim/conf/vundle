@@ -19,8 +19,9 @@ Plugin 'ervandew/supertab'
 " Comments related
 Plugin 'ddollar/nerdcommenter'
 
-" Parenthesis
+" Syntax
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'scrooloose/syntastic'
 
 " Ruby related
 Plugin 'slim-template/vim-slim'
