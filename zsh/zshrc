@@ -5,6 +5,7 @@ source "$HOME/.dots/zsh/conf/history"
 source "$HOME/.dots/zsh/conf/general"
 source "$HOME/.dots/zsh/conf/plugins"
 source "$HOME/.dots/zsh/conf/ps1"
+source "$HOME/.dots/zsh/conf/rbenv"
 
 zstyle :compinstall filename '$HOME/.zshrc'
 

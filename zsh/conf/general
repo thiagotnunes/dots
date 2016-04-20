@@ -12,3 +12,12 @@ setopt nomatch
 
 # Does not beep
 unsetopt beep
+
+# Sets Editor
+export EDITOR=vi
+
+# Sets backward/forward word
+bindkey "[D" backward-word
+bindkey "[C" forward-word
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line
