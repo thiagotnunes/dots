@@ -33,7 +33,7 @@ Plugin 'kien/ctrlp.vim'
 
 " Vim interface related
 Plugin 'vim-scripts/ZoomWin'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'vim-airline/vim-airline'
 
 " Viewers related
 Plugin 'sjl/gundo.vim'
