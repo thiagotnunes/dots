@@ -9,7 +9,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " Enhancing editing/typing related
 Plugin 'vim-scripts/matchit.zip'
@@ -51,6 +51,9 @@ Plugin 'elixir-lang/vim-elixir'
 
 " Go
 Plugin 'jnwhiteh/vim-golang'
+
+" Multiple cursors
+Plugin 'terryma/vim-multiple-cursors'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
