@@ -49,9 +49,13 @@
   p = push
   plr = pull --rebase
   unstage = reset HEAD --
-  assume= !f() { git ls-files "$@" | xargs -n 100 git update-index --assume-unchanged\n}\n f;
-  unassume= !f() { git ls-files "$@" | xargs -n 100 git update-index --no-assume-unchanged\n}\n f
-  assumed = !git ls-files -v | grep "^[[:lower:]]"
+  head = !git r -1
+  h = !git head
+  hp = "!. ~/.githelpers && show_git_head"
+  r = !GIT_NO_PAGER=1 git l -30
+  ra = !git r --all
+  l = "!. ~/.githelpers && pretty_git_log"
+  la = !git l --all
 [merge]
   tool = vimdiff
 [credential]
