@@ -14,7 +14,7 @@ setopt nomatch
 unsetopt beep
 
 # Sets Editor
-export EDITOR=vi
+export EDITOR=vim
 
 # Sets backward/forward word
 bindkey "[D" backward-word

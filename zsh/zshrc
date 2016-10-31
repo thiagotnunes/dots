@@ -6,6 +6,8 @@ source "$HOME/.dots/zsh/conf/general"
 source "$HOME/.dots/zsh/conf/plugins"
 source "$HOME/.dots/zsh/conf/ps1"
 source "$HOME/.dots/zsh/conf/rbenv"
+source "$HOME/.dots/zsh/conf/external"
+source "$HOME/.dots/zsh/conf/h.sh"
 
 zstyle :compinstall filename '$HOME/.zshrc'
 
