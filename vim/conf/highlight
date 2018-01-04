@@ -4,3 +4,10 @@
 :highlight ExtraWhitespace guifg=red guibg=red
 :match ExtraWhitespace /\s\+$\| \+\ze\t/
 :autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+
+" sets highlighting for column
+set cursorcolumn
+
+" highlights long lines
+match ErrorMsg '\%>120v.\+'
+match ErrorMsg '\s\+$'
