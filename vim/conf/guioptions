@@ -19,5 +19,10 @@ let g:Powerline_symbols = 'fancy'
 " sets numbers
 set nu
 
+" sane line joins
+if v:version > 703 || v:version == 703 && has('patch541')
+  set formatoptions+=j
+endif
+
 " load the status line
 source ~/.vim/conf/statusline
