@@ -53,8 +53,8 @@ function last_command() {
     echo "${RESET_COLOR}${BG_RED}[${history}]${RESET_COLOR}"
   fi
 }
-USER="${FG_RED}%n${RESET_COLOR}"
+COLORED_USER="${FG_RED}%n${RESET_COLOR}"
 CURRENT_DIR="%~"
 COMMAND_SEPARATOR="${FG_GREEN}∴ ${RESET_COLOR}"
 
-PS1='${USER} $(last_command) $(git_information) ${CURRENT_DIR}${NEWLINE}${COMMAND_SEPARATOR}'
+PS1='${COLORED_USER} $(last_command) $(git_information) ${CURRENT_DIR}${NEWLINE}${COMMAND_SEPARATOR}'
