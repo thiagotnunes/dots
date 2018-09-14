@@ -56,6 +56,7 @@
   ra = !git r --all
   l = "!. ~/.githelpers && pretty_git_log"
   la = !git l --all
+  bmd = "!git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
 [merge]
   tool = vimdiff
 [credential]
