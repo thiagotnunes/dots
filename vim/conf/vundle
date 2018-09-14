@@ -51,7 +51,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'elixir-lang/vim-elixir'
 
 " Go
-Plugin 'jnwhiteh/vim-golang'
+Plugin 'fatih/vim-go'
 
 " Multiple cursors
 Plugin 'terryma/vim-multiple-cursors'
