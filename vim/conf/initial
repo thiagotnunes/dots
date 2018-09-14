@@ -47,3 +47,5 @@ set t_ut=
 " http://ksjoberg.com/vim-esckeys.html
 " set noesckeys
 set timeout timeoutlen=1000 ttimeoutlen=100
+
+set autowrite
