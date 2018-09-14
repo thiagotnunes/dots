@@ -45,15 +45,6 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-" Maps leader l to insert a hash rocket
-imap <c-l> <space>=><space>
-
-" Maps leader n to rename the current file
-map <leader>n :call RenameFile()<cr>
-
-" Maps alternating from test to production code to <leader> (rails)
-map <leader>. :A<cr>
-
 " Maps searching with ack
 noremap <Leader>a :Ack <cword><cr>
 
