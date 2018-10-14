@@ -1,0 +1,5 @@
+set -x DOWNLOADS $HOME/Downloads
+set -x EDITOR vim
+set -x WORKSPACE $HOME/workspaces
+set -x LANG en_US.UTF-8
+set -x LC_ALL en_US.UTF-8
