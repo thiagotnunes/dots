@@ -11,22 +11,11 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" Enhancing editing/typing related
-Plugin 'vim-scripts/matchit.zip'
-Plugin 'tpope/vim-surround'
-Plugin 'ervandew/supertab'
-
 " Comments related
 Plugin 'ddollar/nerdcommenter'
 
 " Syntax
 Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'scrooloose/syntastic'
-
-" Ruby related
-Plugin 'slim-template/vim-slim'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
 
 " File/buffer navigation related
 Plugin 'scrooloose/nerdtree'
@@ -46,12 +35,6 @@ Plugin 'vim-scripts/wombat256.vim'
 " Git related
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
-
-" Elixir
-Plugin 'elixir-lang/vim-elixir'
-
-" Go
-Plugin 'fatih/vim-go'
 
 " Multiple cursors
 Plugin 'terryma/vim-multiple-cursors'
