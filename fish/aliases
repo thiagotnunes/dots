@@ -2,16 +2,6 @@
 alias ls "ls --color=auto"
 alias grep "grep --color=auto"
 
-# make it simpler
-alias .. "cd .."
-alias ... "cd ../../"
-alias .... "cd ../../.."
-alias cd "cd ~"
-
-# top
-alias cpu "top -o cpu"
-alias mem "top -o rsize" # memory
-
 # set move and copy to be verbose
 alias mv "mv -v"
 alias cp "cp -v"

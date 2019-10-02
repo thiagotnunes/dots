@@ -1,5 +1,4 @@
 . "$HOME/.dots/fish/path"
-. "$HOME/.dots/fish/general"
+. "$HOME/.dots/fish/env"
 . "$HOME/.dots/fish/aliases"
-. "$HOME/.dots/fish/functions"
-. "$HOME/.dots/fish/tools"
+

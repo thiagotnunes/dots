@@ -3,3 +3,4 @@ set -x EDITOR vim
 set -x WORKSPACE $HOME/workspaces
 set -x LANG en_US.UTF-8
 set -x LC_ALL en_US.UTF-8
+set -g -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
