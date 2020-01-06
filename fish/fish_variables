@@ -1,8 +1,27 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR __async_prompt_fish_prompt_text_35082:\x1b\x5b36m\u276f\u276f\x20\x1b\x5b30m\x1b\x28B\x1b\x5bm
+SETUVAR __async_prompt_fish_prompt_text_45083:\x1b\x5b36m\u276f\u276f\x20\x1b\x5b30m\x1b\x28B\x1b\x5bm
+SETUVAR __async_prompt_fish_prompt_text_71495:\x1b\x5b36m\x3e\x3e\x0a\x1b\x5b30m\x1b\x28B\x1b\x5bm
+SETUVAR __async_prompt_fish_right_prompt_text_35082:\x1b\x5b36m\x1b\x5b30m\x1b\x28B\x1b\x5bm\x1b\x5b34m\x7e/w/a/j/master\x20\x1b\x5b30m\x1b\x28B\x1b\x5bm
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
+SETUVAR _async_job_result_10728:\u2026
+SETUVAR _async_job_result_11609:\u2026
+SETUVAR _async_job_result_14308:\u2026
+SETUVAR _async_job_result_17808:\u2026
+SETUVAR _async_job_result_18692:\u2026
+SETUVAR _async_job_result_21307:\u2026
+SETUVAR _async_job_result_2144:\u2026
+SETUVAR _async_job_result_21594:\u2026
+SETUVAR _async_job_result_26043:\u2026
+SETUVAR _async_job_result_2856:\u2026
+SETUVAR _async_job_result_30201:\u2026
+SETUVAR _async_job_result_30529:\u2026
+SETUVAR _async_job_result_3877:\u2026
+SETUVAR _async_job_result_5201:\u2026
+SETUVAR _async_job_result_9516:\u2026
 SETUVAR fish_color_autosuggestion:969896
 SETUVAR fish_color_cancel:normal
 SETUVAR fish_color_command:b294bb
@@ -22,6 +41,7 @@ SETUVAR fish_color_quote:b5bd68
 SETUVAR fish_color_redirection:8abeb7
 SETUVAR fish_color_search_match:ffff00
 SETUVAR fish_color_selection:c0c0c0
+SETUVAR fish_color_status:red
 SETUVAR fish_color_user:00ff00
 SETUVAR fish_color_valid_path:normal
 SETUVAR fish_greeting:Welcome\x20to\x20fish\x2c\x20the\x20friendly\x20interactive\x20shell
@@ -30,3 +50,4 @@ SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_user_paths:/usr/local/opt/coreutils/libexec/gnubin
