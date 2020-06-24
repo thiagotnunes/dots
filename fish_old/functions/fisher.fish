@@ -433,4 +433,3 @@ function _fisher_now -a elapsed
             math (command date "+%s%3N") - "0$elapsed"
     end
 end
-
